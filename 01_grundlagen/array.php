@@ -50,10 +50,59 @@ $title = "Selam";
 		echo '<pre>';
 		print_r($person);
 		echo '</pre>';
+
+		$anzahl = count($person);
+		echo "<p>$anzahl Elemente in \$person</p>";
+		#echo $person[1]; <- geht nicht
+		echo $person['nachname'];
+
 		?>
 
+		<h2>Mehrdimensionale Arrays</h2>
+		<p>Ein Array kann mehr als eine Dimension besitzen. Und swar dann,<br>
+			wenn die Werte der ersten Dimension wieder Arrays sind.</p>
 		
-		
+		<?php 
+		$personen = [
+			[
+				'vorname' => 'James',
+				'nachname' => 'Blonde',
+				'wohnort' => 'London'
+			],
+			[
+				'vorname' => 'Cengiz',
+				'nachname' => 'Khan',
+				'wohnort' => 'Mongolistan'
+			],
+			$person
+
+		];
+
+		# Wie ist $personen indiziert? -> Numerisch
+		# Wieviele Elemente besitzt $personen? -> 3
+		# Wie ist der Datentyp des 1. Elements? -> = Array
+		# Wie ist das 1. Element indiziert? -> assoziativ
+		# Wieviele Dimensionen besitzt $personen -> 2
+
+		$anzahl = count($personen);
+		echo "<p> $anzahl Elemente in \$personen </p>";
+		echo '<pre>';
+		var_dump($personen);
+		echo '</pre>';
+		?>
+		<p>Ausgabe des 2. Element von $personen mit Vorname und Nachname</p>
+		<?php 
+		echo '<p>' . $personen[1]['vorname'] . ' hat den Nachnamen ' . $personen[1]['nachname']. '</p>';
+
+		$personen[0]['nachname'] = 'Bond';
+
+		?>
+		<p>Problematisch ist die Ausgabe von assoziativ indizierten Arrays <br>
+		 in interpolierenden Zeichenketten</p>
+
+		<?php 
+		echo "<p> {$personen[0]['vorname']} hat den Nachnamen: {$personen[0]['nachname']} </p>";
+		?>
 	</body>	
 
 </html>
