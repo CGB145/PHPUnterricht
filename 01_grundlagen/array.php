@@ -101,7 +101,7 @@ $title = "Selam";
 		 in interpolierenden Zeichenketten</p>
 
 		<?php 
-		echo "<p> {$personen[0]['vorname']} hat den Nachnamen: {$personen[0]['nachname']} </p>";
+		echo "<p> {$personen[0]['vorname']} hat den Nachnamen: {$personen[0]['nachname']}! </p>";
 		?>
 	</body>	
 
