@@ -56,6 +56,13 @@ echo "<pre>";
 print_r($_COOKIE);
 echo "</pre>";
  ?>
+
+<h3>Request</h3>
+<p>Kombination aus GET und POST Variablen</p>
+<?php print_r($_REQUEST) ?>
+<p>Man verliert die Herkunft der Daten,, also kommt der Wert aus _$Get oder _$POST? Kontrollverlust übder die <br>
+Daten ist die Folge! _$REQUEST vermeiden!</p>
+
 <h3>COOKIE Daten</h3>
 <p>Sind erfunden worden, damit man Daten auf dem Client speichern kann (je nach Broswer per Cookie 2-4kb). <br>
 Sie sind Flachtext, damit nicht ausführbar. Gefärhlich werden sie im Kontext von Data-Mining. </p>
@@ -71,11 +78,13 @@ print_r($_SERVER);
 <h3>FILES</h3>
 <p>$_FILES mit Dateianhängen bei POST Anfrage mitschickt</p>
 
+
 <h3>GLOBLAS</h3>
 <p>$GLOBLAS speichert alle global definierten Variablen</p>
 <p>
 $text = "Hallo"; <br>
 echo $GLOBLAS['text'];
+<?php #print_r($GLOBALS); ?>
 </p>
 
 <h3>SESSION</h3>
